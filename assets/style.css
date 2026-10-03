@@ -1011,3 +1011,10 @@ body .ft details.ddm summary{border-radius:0}
   .ex-sum:not(.wide3){display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px 40px}
   .ex-sum:not(.wide3)>div{flex:0 0 auto}
 }
+
+/* ===== v55: 모바일 검사 종류 카드 - 준비 칩을 한 줄로 ===== */
+@media(max-width:640px){
+  .tcard .timg{flex:0 0 30%}
+  .tcard .tb{padding:10px 10px 10px 12px}
+  .tcard .tb .chip2{white-space:nowrap;font-size:max(9.5px,2.8vw);padding:3px 7px;letter-spacing:-.02em}
+}
