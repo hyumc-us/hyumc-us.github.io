@@ -1005,3 +1005,9 @@ body .ft details.ddm summary{border-radius:0}
 @media(min-width:901px){
   .ex-sum:not(.wide3){grid-template-columns:repeat(3,1fr);column-gap:24px}
 }
+
+/* ===== v54: 부위별 요약 3개 항목 사이 간격을 동일하게 ===== */
+@media(min-width:901px){
+  .ex-sum:not(.wide3){display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px 40px}
+  .ex-sum:not(.wide3)>div{flex:0 0 auto}
+}
