@@ -8,13 +8,42 @@
 </head>
 <body data-title="초음파실 위치" data-page="location" data-root="../">
 <main class="wrap">
-  <div class="ptitle"><h2>초음파실 위치</h2><p>본관 3층 영상의학과 내 <b>초음파검사실</b></p></div>
-  <div class="card loc-soon">
-    <h3 data-i="i-pin">본관 3층 영상의학과</h3>
-    <p>수납 후 본관 3층 영상의학과 접수에서 접수하시고, 초음파실 전광판을 확인한 뒤 호명을 기다려 주세요.</p>
-    <p class="soon">상세 약도는 준비 중입니다. 길 안내가 필요하시면 대표전화 <b>02-2290-8114</b>로 문의해 주세요.</p>
+  <div class="ptitle"><h2>초음파실 위치</h2><p>본관 3층 영상의학과 내 <b>초음파검사실</b> · 이용하시는 입구를 선택하면 이동 방법이 표시됩니다.</p></div>
+
+  <div id="routeBtns" class="routes loc-routes"></div>
+
+  <div class="card route-wrap">
+    <h3 id="rt">이동 방법</h3>
+    <ol class="route" id="steps"></ol>
+    <p style="font-size:13px;color:var(--sub);margin-top:10px">※ 현장 안내 표지를 함께 확인해주세요. 상세 약도는 준비 중입니다.</p>
   </div>
 </main>
 <script src="../assets/site.js"></script>
+<script>
+(function(){
+  var R=[
+    {n:'서관·상단 에스컬레이터',
+     t:['서관 6층 방향 또는 본관 에스컬레이터로 <b>3층</b>에 올라옵니다.','에스컬레이터에서 나와 아래쪽(CT·X-ray 방향) 통로로 이동합니다.','오른쪽 <b>영상의학과</b> 복도로 진입해 끝까지 직진합니다.','복도 안쪽 <b>초음파실</b> 접수 후 대기합니다.']},
+    {n:'본관 엘리베이터',
+     t:['본관 엘리베이터를 타고 <b>3층</b>에서 내립니다.','내리면 바로 오른쪽이 <b>영상의학과</b> 구역입니다.','복도를 따라 안쪽으로 직진합니다.','<b>초음파실</b> 접수 후 대기합니다.']},
+    {n:'응급센터·동관 통로',
+     t:['응급센터 · 동관 연결통로로 3층에 들어옵니다.','통로를 따라 위쪽으로 직진합니다.','<b>영상의학과</b> 복도에서 오른쪽으로 꺾어 이동합니다.','<b>초음파실</b> 접수 후 대기합니다.']},
+    {n:'서관 3층 연결',
+     t:['서관 3층에서 본관 방향 연결통로로 이동합니다.','통로 끝에서 바로 <b>영상의학과</b> 구역에 도착합니다.','<b>초음파실</b> 접수 후 대기합니다.']}
+  ];
+  var btns=document.getElementById('routeBtns'),st=document.getElementById('steps');
+  function draw(i){
+    var r=R[i];
+    st.innerHTML=r.t.map(function(x){return '<li><span>'+x+'</span></li>'}).join('');
+    document.getElementById('rt').textContent=['①','②','③','④'][i]+' '+r.n+'에서 오는 길';
+    [].forEach.call(btns.children,function(b,j){b.classList.toggle('on',j===i)});
+  }
+  R.forEach(function(r,i){
+    var b=document.createElement('button');b.innerHTML='<i>'+(i+1)+'</i>'+r.n;
+    b.onclick=function(){draw(i)};btns.appendChild(b);
+  });
+  draw(0);
+})();
+</script>
 </body>
 </html>

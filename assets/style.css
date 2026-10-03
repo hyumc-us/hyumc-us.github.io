@@ -945,3 +945,25 @@ body .ft details.ddm summary{border-radius:0}
 .loc-soon p{margin:8px 0 0;line-height:1.75;color:#333}
 .loc-soon .soon{color:var(--sub);background:var(--bg);border-radius:6px;padding:14px 16px;margin-top:16px}
 @media(max-width:640px){.types-in{margin:30px 0 8px}.loc-soon{padding:20px}}
+
+/* ===== v46: 레이아웃 정리 ===== */
+/* 검사 종류 카드: 링크 제거, 높이 통일 */
+.tcard{display:flex;flex-direction:column;height:100%}
+.tcard .tb{flex:1;display:flex;flex-direction:column;align-items:flex-start}
+.tcard .tb p{margin-bottom:12px}
+.tcard .tb .chip2{margin-top:auto}
+.types-grid{align-items:stretch}
+/* 부위별 요약 줄 */
+.ex-sum.wide3{grid-template-columns:2fr 1fr}
+.ex-sum.wide3>div:nth-child(3){grid-column:1/-1}
+@media(max-width:900px){.ex-sum.wide3{grid-template-columns:1fr}}
+.card p{word-break:keep-all}
+/* FAQ: 행 정렬 */
+.faqg{display:grid;grid-template-columns:1fr 1fr;gap:0 24px;align-items:stretch}
+.faqg details{display:flex;flex-direction:column;margin-bottom:18px}
+.faqg details.wide{grid-column:1/-1}
+.faqg details .a{flex:1}
+@media(max-width:900px){.faqg{grid-template-columns:1fr}}
+/* 위치: 경로 안내 */
+.route-wrap{max-width:860px}
+.loc-routes{margin:18px 0 12px}
