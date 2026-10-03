@@ -967,3 +967,30 @@ body .ft details.ddm summary{border-radius:0}
 /* 위치: 경로 안내 */
 .route-wrap{max-width:860px}
 .loc-routes{margin:18px 0 12px}
+
+/* ===== v49: 모바일 정리 (진행순서 압축, 검사 종류 1열, 탭 한 줄, 요약 한 줄) ===== */
+@media(max-width:640px){
+  /* 검사 진행 순서: 아이콘+제목+설명을 한 줄 구성으로 압축 */
+  .steps.s3{gap:8px}
+  .steps.s3 .step{display:grid;grid-template-columns:44px 1fr;column-gap:12px;align-items:center;padding:12px 14px}
+  .steps.s3 .step::before{grid-column:2;margin-bottom:0;font-size:11.5px}
+  .steps.s3 .step .si{grid-column:1;grid-row:1/4;position:static;width:44px;height:44px;font-size:24px;margin:0}
+  .steps.s3 .step b{grid-column:2;font-size:16.5px;margin:0}
+  .steps.s3 .step p{grid-column:2;margin:0;font-size:13.5px;line-height:1.45}
+  .steps.s3 .step p span{display:inline;white-space:normal}
+  .steps.s3 .step p span+span::before{content:" "}
+  /* 검사 종류: 한 줄에 한 개, 가로형 카드로 높이 통일 */
+  .types-grid{grid-template-columns:1fr;gap:10px}
+  .tcard{flex-direction:row;height:auto;min-height:128px}
+  .tcard .timg{flex:0 0 42%;aspect-ratio:auto;min-height:128px}
+  .tcard .tb{padding:12px 14px;justify-content:center}
+  .tcard .tb b{font-size:16px}
+  .tcard .tb p{font-size:12.5px;margin-bottom:8px}
+  .tcard .tb .chip2{margin-top:0;font-size:11.5px;padding:3px 9px}
+  /* 탭: 모두 한 줄, 같은 크기 */
+  .subtabs button{padding:12px 2px;font-size:13px;white-space:nowrap;letter-spacing:-.03em}
+  /* 요약 줄: 라벨과 내용을 같은 줄에 */
+  .ex-sum>div{display:flex;flex-wrap:nowrap;align-items:flex-start;gap:0}
+  .ex-sum span.k{flex:none;margin-top:2px}
+  .ex-sum b{flex:1;font-size:14.5px;line-height:1.5}
+}
