@@ -994,3 +994,9 @@ body .ft details.ddm summary{border-radius:0}
   .ex-sum span.k{flex:none;margin-top:2px}
   .ex-sum b{flex:1;font-size:14.5px;line-height:1.5}
 }
+
+/* ===== v50: 요약 줄 라벨 크기 통일, 소요시간을 오른쪽 카드 시작선에 맞춤 ===== */
+.ex-sum span.k{min-width:78px;text-align:center;box-sizing:border-box}
+@media(min-width:901px){
+  .ex-sum.wide3{grid-template-columns:calc(50% + 12px) 1fr;column-gap:0;justify-content:stretch}
+}
