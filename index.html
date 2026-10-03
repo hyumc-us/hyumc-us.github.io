@@ -135,46 +135,6 @@
   </div>
 </section>
 
-<!-- 초음파 검사 종류 -->
-<section class="sec" id="types">
-  <div class="wrap">
-    <header class="sh">
-      <span class="sh-eyebrow">TYPES OF EXAMINATION</span>
-      <h2>초음파 검사 종류</h2>
-      <p>검사 부위에 따라 확인하는 장기와 준비사항이 다릅니다. 카드를 누르면 자세한 안내를 볼 수 있습니다.</p>
-    </header>
-
-    <div class="types-grid">
-      <a class="tcard" href="exam/" data-part="e-abd">
-        <div class="timg" role="img" aria-label="복부(간·신장) 초음파 영상" style="background-image:url(img/us/abdomen.jpg);background-size:150% auto;background-position:50% 34%"></div>
-        <div class="tb"><b>복부 초음파</b><p>간 · 담낭 · 췌장 · 신장</p><span class="chip2">8시간 금식</span></div>
-      </a>
-      <a class="tcard" href="exam/" data-part="e-thy">
-        <div class="timg" role="img" aria-label="갑상선 초음파 영상" style="background-image:url(img/us/thyroid.jpg);background-size:147% auto;background-position:80% 37%"></div>
-        <div class="tb"><b>갑상선 · 경부</b><p>갑상선 · 림프절 · 침샘</p><span class="chip2 ok">사전 준비 없음</span></div>
-      </a>
-      <a class="tcard" href="exam/" data-part="e-brs">
-        <div class="timg" role="img" aria-label="유방 초음파 영상" style="background-image:url(img/us/breast.jpg);background-size:119% auto;background-position:52% 55%"></div>
-        <div class="tb"><b>유방 초음파</b><p>유방 · 겨드랑이 림프절</p><span class="chip2 ok">사전 준비 없음</span></div>
-      </a>
-      <a class="tcard" href="exam/" data-part="e-vas">
-        <div class="timg" role="img" aria-label="혈관 컬러 도플러 초음파 영상" style="background-image:url(img/us/doppler.jpg);background-size:153% auto;background-position:71% 63%"></div>
-        <div class="tb"><b>혈관 도플러</b><p>경동맥 · 하지 혈관 혈류</p><span class="chip2">검사 부위별 상이</span></div>
-      </a>
-      <a class="tcard" href="exam/" data-part="e-msk">
-        <div class="timg" role="img" aria-label="근골격(무릎) 초음파 영상" style="background-image:url(img/us/msk.jpg);background-size:119% auto;background-position:52% 46%"></div>
-        <div class="tb"><b>근골격 초음파</b><p>힘줄 · 인대 · 관절 · 근육</p><span class="chip2 ok">사전 준비 없음</span></div>
-      </a>
-      <a class="tcard" href="exam/" data-part="e-pel">
-        <div class="timg" role="img" aria-label="방광 초음파 영상" style="background-image:url(img/us/pelvis.jpg);background-size:141% auto;background-position:57% 44%"></div>
-        <div class="tb"><b>골반 · 방광</b><p>방광 · 전립선 · 자궁 · 난소</p><span class="chip2">검사 부위별 상이</span></div>
-      </a>
-    </div>
-
-    <p class="types-note">※ 위 영상은 초음파 영상의 이해를 돕기 위한 예시 자료이며, 환자분의 실제 검사 영상이 아닙니다.</p>
-  </div>
-</section>
-
 <section class="band tint2">
   <div class="wrap">
     <div class="infocard">
@@ -195,48 +155,5 @@
 </section>
 
 <script src="assets/site.js"></script>
-
-<!-- 검사 부위별 안내 팝업 (검사안내 페이지의 내용을 불러와 표시) -->
-<div class="pop" id="pop" hidden>
-  <div class="pop-bg" data-close></div>
-  <div class="pop-box" role="dialog" aria-modal="true" aria-labelledby="pop-t">
-    <button class="pop-x" type="button" data-close aria-label="닫기">&times;</button>
-    <div class="pop-head">
-      <div class="pop-thumb" id="pop-thumb" role="img" aria-hidden="true"></div>
-      <div><span class="pop-eyebrow">검사 부위별 안내</span><h3 id="pop-t"></h3><span class="chip2" id="pop-chip"></span></div>
-    </div>
-    <div class="pop-c" id="pop-c"></div>
-    <div class="pop-foot"><span class="tbc">의료진 검수 필요</span><a class="btn p" href="exam/">검사안내 전체 보기</a></div>
-  </div>
-</div>
-<script>
-(function(){
-  var pop=document.getElementById('pop'),body=document.getElementById('pop-c'),last=null,cache=null;
-  function load(){
-    if(!cache){cache=fetch('exam/').then(function(r){if(!r.ok)throw new Error('x');return r.text();}).then(function(t){return new DOMParser().parseFromString(t,'text/html');});}
-    return cache;
-  }
-  function close(){pop.hidden=true;document.body.classList.remove('pop-open');if(last)last.focus();}
-  function open(card){
-    var id=card.getAttribute('data-part');last=card;
-    load().then(function(doc){
-      var panel=doc.getElementById(id);if(!panel)throw new Error('x');
-      var t=card.querySelector('.tb b').textContent,chip=card.querySelector('.chip2');
-      document.getElementById('pop-t').textContent=t;
-      var c=document.getElementById('pop-chip');c.textContent=chip.textContent;c.className=chip.className;
-      var th=document.getElementById('pop-thumb'),im=card.querySelector('.timg');
-      th.style.cssText=im.getAttribute('style');
-      body.innerHTML=panel.innerHTML;
-      window.hydrate(body);
-      pop.hidden=false;document.body.classList.add('pop-open');
-      pop.querySelector('.pop-box').scrollTop=0;
-      pop.querySelector('.pop-x').focus();
-    }).catch(function(){location.href='exam/';});
-  }
-  [].forEach.call(document.querySelectorAll('.tcard'),function(a){a.addEventListener('click',function(e){e.preventDefault();open(a);});});
-  [].forEach.call(pop.querySelectorAll('[data-close]'),function(b){b.addEventListener('click',close);});
-  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!pop.hidden)close();});
-})();
-</script>
 </body>
 </html>

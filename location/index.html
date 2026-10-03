@@ -8,72 +8,13 @@
 </head>
 <body data-title="초음파실 위치" data-page="location" data-root="../">
 <main class="wrap">
-  <div class="ptitle"><h2>초음파실 위치</h2><p>본관 3층 영상의학과 내 <b>초음파검사실</b> · 아래에서 이용하시는 입구를 선택하면 경로가 표시됩니다. <span class="tbc">경로 현장 확인 필요</span></p></div>
-
-  <div class="seg" role="group" aria-label="지도 선택">
-    <button class="on" data-m="f3">본관 3층 경로</button>
-    <button data-m="campus">병원 건물 배치도</button>
-  </div>
-  <div id="routeBtns" class="routes" style="margin:0 0 8px"></div>
-  <div class="legend" style="margin:0 0 14px"><span><s style="background:rgba(11,141,217,.3);border:1.5px solid #0b8dd9"></s>영상의학과 구역</span><span><s style="border-top:3px dashed #b8453c;height:0"></s>이동 경로</span><span><s style="background:#b8453c;border-radius:50%;width:10px"></s>초음파검사실</span></div>
-
-  <div class="loc">
-    <div>
-      <div class="mapbox" id="f3">
-        <img src="../img/floor3f.png" width="817" height="701" alt="본관 3층 층별 안내도 — 영상의학과 구역과 초음파검사실 경로">
-        <svg class="ov" viewBox="0 0 817 701" preserveAspectRatio="none" aria-hidden="true">
-          <defs>
-            <marker id="ah" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="4" markerHeight="4" orient="auto"><path d="M0 0L10 5L0 10z" fill="#b8453c"/></marker>
-          </defs>
-          <rect x="428" y="196" width="346" height="160" rx="38" fill="#0b8dd9" fill-opacity=".16" stroke="#0b8dd9" stroke-width="2.5"/>
-          <g id="route"></g>
-          <g id="dest"><circle cx="640" cy="264" r="10" fill="#b8453c" stroke="#fff" stroke-width="3"/><rect x="592" y="222" width="96" height="30" rx="15" fill="#b8453c" stroke="#fff" stroke-width="2.5"/><text x="640" y="243" text-anchor="middle" font-size="17" font-weight="700" fill="#fff" font-family="sans-serif">초음파실</text></g>
-        </svg>
-      </div>
-      <div class="mapbox hide" id="campus"><img src="../img/floor.png" alt="한양대학교병원 건물 배치도 (본관·서관·동관·신관)"></div>
-    </div>
-    <div class="card">
-      <h3 id="rt">이동 방법</h3>
-      <ol class="route" id="steps"></ol>
-      <p style="font-size:13px;color:var(--sub);margin-top:10px">※ 경로는 안내용 예시이며, 현장 안내 표지를 함께 확인해주세요.</p>
-    </div>
+  <div class="ptitle"><h2>초음파실 위치</h2><p>본관 3층 영상의학과 내 <b>초음파검사실</b></p></div>
+  <div class="card loc-soon">
+    <h3 data-i="i-pin">본관 3층 영상의학과</h3>
+    <p>수납 후 본관 3층 영상의학과 접수에서 접수하시고, 초음파실 전광판을 확인한 뒤 호명을 기다려 주세요.</p>
+    <p class="soon">상세 약도는 준비 중입니다. 길 안내가 필요하시면 대표전화 <b>02-2290-8114</b>로 문의해 주세요.</p>
   </div>
 </main>
 <script src="../assets/site.js"></script>
-<script>
-(function(){
-  var R=[
-    {n:'서관·상단 에스컬레이터',d:'M252 76 V110 H371 V264 H664',s:[252,76],
-     t:['서관 6층 방향 또는 본관 에스컬레이터로 <b>3층</b>에 올라옵니다.','에스컬레이터에서 나와 아래쪽(CT·X-ray 방향) 통로로 이동합니다.','오른쪽 <b>영상의학과</b> 복도로 진입해 끝까지 직진합니다.','복도 안쪽 <b>초음파실</b> 접수 후 대기합니다.']},
-    {n:'본관 엘리베이터',d:'M437 258 V264 H664',s:[437,258],
-     t:['본관 엘리베이터를 타고 <b>3층</b>에서 내립니다.','내리면 바로 오른쪽이 <b>영상의학과</b> 구역입니다.','복도를 따라 안쪽으로 직진합니다.','<b>초음파실</b> 접수 후 대기합니다.']},
-    {n:'응급센터·동관 통로',d:'M406 640 V264 H664',s:[406,640],
-     t:['응급센터 · 동관 연결통로로 3층에 들어옵니다.','통로를 따라 위쪽으로 직진합니다.','<b>영상의학과</b> 복도에서 오른쪽으로 꺾어 이동합니다.','<b>초음파실</b> 접수 후 대기합니다.']},
-    {n:'서관 3층 연결',d:'M806 264 H664',s:[806,264],
-     t:['서관 3층에서 본관 방향 연결통로로 이동합니다.','통로 끝에서 바로 <b>영상의학과</b> 구역에 도착합니다.','<b>초음파실</b> 접수 후 대기합니다.']}
-  ];
-  var g=document.getElementById('route'),btns=document.getElementById('routeBtns'),st=document.getElementById('steps');
-  function draw(i){
-    var r=R[i];
-    g.innerHTML='<path d="'+r.d+'" fill="none" stroke="#fff" stroke-width="10" stroke-linejoin="round"/>'+
-      '<path class="flow" d="'+r.d+'" fill="none" stroke="#b8453c" stroke-width="5" stroke-dasharray="12 8" stroke-linejoin="round" marker-end="url(#ah)"/>'+
-      '<circle cx="'+r.s[0]+'" cy="'+r.s[1]+'" r="17" fill="#0657a5" stroke="#fff" stroke-width="3"/>'+
-      '<text x="'+r.s[0]+'" y="'+(r.s[1]+7)+'" text-anchor="middle" font-size="20" font-weight="700" fill="#fff" font-family="sans-serif">'+(i+1)+'</text>';
-    st.innerHTML=r.t.map(function(x){return '<li><span>'+x+'</span></li>'}).join('');
-    document.getElementById('rt').textContent='② '.replace('②',['①','②','③','④'][i])+r.n+'에서 오는 길';
-    [].forEach.call(btns.children,function(b,j){b.classList.toggle('on',j===i)});
-  }
-  R.forEach(function(r,i){
-    var b=document.createElement('button');b.innerHTML='<i>'+(i+1)+'</i>'+r.n;
-    b.onclick=function(){draw(i)};btns.appendChild(b);
-  });
-  draw(0);
-  document.querySelectorAll('.seg button').forEach(function(b){b.addEventListener('click',function(){
-    document.querySelectorAll('.seg button').forEach(function(x){x.classList.toggle('on',x===b)});
-    ['f3','campus'].forEach(function(id){document.getElementById(id).classList.toggle('hide',id!==b.dataset.m)});
-    var f=b.dataset.m==='f3';btns.classList.toggle('hide',!f);document.querySelector('.legend').classList.toggle('hide',!f);
-  })});
-})();
-</script>
 </body>
 </html>
