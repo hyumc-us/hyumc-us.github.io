@@ -7,7 +7,6 @@ Image credits (Wikimedia Commons) - 사이트에서 사용한 초음파 예시 �
 - pelvis.jpg   : "Ultrasound of trabeculated urinary bladder.jpg" by Mikael Haggstrom, CC0
 CC BY-SA 이미지는 저작자 표시와 동일 조건 변경허락 의무가 있습니다. 원본에서 확대/자르기 하여 사용.
 
-[v46 교체 이미지]
-thyroid.jpg / bx.jpg : "SD-Sono001-Nummern copy.png" (Wikimedia Commons, CC BY-SA 3.0) - 일부 잘라내고 표기 문자 제거, bx.jpg는 설명용 바늘 표시 합성
-breast.jpg   : "Ultrasound Scan ND 0110113310 1135270.png" (Wikimedia Commons, CC BY-SA 3.0) - 일부 잘라냄
-msk.jpg      : "Longitudinal US supraspinatus.jpg" (Wikimedia Commons, CC BY-SA 4.0) - 일부 잘라냄
+[v48 교체 이미지]
+breast.jpg, thyroid.jpg, msk.jpg, bx.jpg : 사용자가 제공한 참고 이미지에서 글자·화살표·아이콘 등을 제거하고 잘라낸 것. 원 출처와 사용 허가는 확인되지 않았으므로 병원 사용 전 권리 확인 필요.
+abdomen.jpg, doppler.jpg : Wikimedia Commons (abdomen: CC BY-SA 4.0 Ptrump16, doppler: CC BY-SA 2.5 Drickey)
