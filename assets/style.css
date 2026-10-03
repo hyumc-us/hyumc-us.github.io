@@ -1018,3 +1018,6 @@ body .ft details.ddm summary{border-radius:0}
   .tcard .tb{padding:10px 10px 10px 12px}
   .tcard .tb .chip2{white-space:nowrap;font-size:max(9.5px,2.8vw);padding:3px 7px;letter-spacing:-.02em}
 }
+
+/* ===== v56: ※ 주석 문단 정렬 (둘째 줄부터 ※ 뒤 글자에 맞춤) ===== */
+.note-ref{padding-left:1.1em;text-indent:-1.1em}
