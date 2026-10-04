@@ -1074,3 +1074,15 @@ body[data-page=faq] .fp details summary:hover{background:#e0ecf9}
   .ex-sum .pl{display:block}
   .ex-sum .sep{display:none}
 }
+
+/* ===== v64: 모바일 검사 종류 카드 - 원본 비율(16:10) 썸네일 + 글 가로 배치로 스크롤 최소화 ===== */
+@media(max-width:640px){
+  .types-grid{gap:10px}
+  .tcard{flex-direction:row;align-items:flex-start;gap:12px;padding:10px;min-height:0}
+  .tcard .timg{flex:0 0 44%;width:44%;min-height:0;aspect-ratio:16/10;border-radius:8px;overflow:hidden}
+  .tcard .tb{flex:1;min-width:0;padding:0;min-height:0;justify-content:flex-start}
+  .tcard .tb b{font-size:16px;margin-bottom:2px}
+  .tcard .tb p{font-size:12px;line-height:1.45;margin-bottom:8px}
+  .tcard .tb .chip2{font-size:11px;padding:3px 9px;white-space:normal;line-height:1.35;margin-top:0;border-radius:12px}
+}
+@media(max-width:640px){ .tcard{min-height:134px;align-items:center} }
