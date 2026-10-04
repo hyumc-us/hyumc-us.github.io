@@ -1053,3 +1053,17 @@ body[data-page=faq] .subtabs{margin:20px 0 24px;max-width:860px}
   .tcard .tb p{font-size:13px;margin-bottom:10px}
   .tcard .tb .chip2{font-size:12px;padding:4px 11px;white-space:normal;margin-top:auto}
 }
+
+/* ===== v62: 상·하복부 요약 줄 재배치, FAQ 질문 박스 톤 완화 ===== */
+@media(min-width:901px){
+  .ex-sum.wide3{grid-template-columns:auto 1fr;column-gap:72px;row-gap:14px;align-items:center}
+  .ex-sum.wide3>div:nth-child(1){grid-column:1/-1}
+  .ex-sum.wide3>div:nth-child(3){grid-column:auto}
+}
+/* FAQ 질문 박스: 연한 톤 + 네이비 Q 배지 */
+body[data-page=faq] .fp details{border:1px solid #cddff2;border-radius:8px;background:#fff;box-shadow:0 1px 6px rgba(20,48,116,.05)}
+body[data-page=faq] .fp details summary{background:#eaf2fb;color:#143074;font-weight:700}
+body[data-page=faq] .fp details summary::before{background:#143074;color:#fff}
+body[data-page=faq] .fp details summary::after{color:#0657a5}
+body[data-page=faq] .fp details[open] summary{background:#dbe9f8;border-bottom:1px solid #cddff2}
+body[data-page=faq] .fp details summary:hover{background:#e0ecf9}
