@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>초음파실 위치 | 초음파실 안내 | 한양대학교병원 영상의학과</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap"><link rel="stylesheet" href="../assets/style.css">
+<script>(function(){try{var l=new URLSearchParams(location.search).get('lang')||localStorage.getItem('lang');if(l&&l!=='ko')document.documentElement.className+=' i18n-wait'}catch(e){}})()</script><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=Noto+Sans:wght@400;500;700&display=swap"><link rel="stylesheet" href="../assets/style.css">
 </head>
 <body data-title="초음파실 위치" data-page="location" data-root="../">
 <main class="wrap">
@@ -18,7 +18,7 @@
     <p class="note-ref" style="font-size:13px;color:var(--sub);margin-top:10px">※ 현장 안내 표지를 함께 확인해주세요.<br>상세 약도는 준비 중입니다.</p>
   </div>
 </main>
-<script src="../assets/site.js"></script>
+<script src="../assets/site.js"></script><script src="../assets/i18n-data.js"></script><script src="../assets/i18n.js"></script>
 <script>
 (function(){
   var R=[
@@ -37,12 +37,14 @@
     st.innerHTML=r.t.map(function(x){return '<li><span>'+x+'</span></li>'}).join('');
     document.getElementById('rt').textContent=['①','②','③','④'][i]+' '+r.n+'에서 오는 길';
     [].forEach.call(btns.children,function(b,j){b.classList.toggle('on',j===i)});
+    if(window.i18nApply){window.i18nApply(document.querySelector('.route-wrap'));}
   }
   R.forEach(function(r,i){
     var b=document.createElement('button');b.innerHTML='<i>'+(i+1)+'</i>'+r.n;
     b.onclick=function(){draw(i)};btns.appendChild(b);
   });
   draw(0);
+  if(window.i18nApply){window.i18nApply(btns);}
 })();
 </script>
 </body>

@@ -1086,3 +1086,25 @@ body[data-page=faq] .fp details summary:hover{background:#e0ecf9}
   .tcard .tb .chip2{font-size:11px;padding:3px 9px;white-space:normal;line-height:1.35;margin-top:0;border-radius:12px}
 }
 @media(max-width:640px){ .tcard{min-height:134px;align-items:center} }
+
+/* ===== v66: 다국어(EN/RU/MN) ===== */
+body{font-family:"Noto Sans KR","Noto Sans","Malgun Gothic",sans-serif}
+.i18n-wait body{visibility:hidden}
+.top .lang{flex:none}
+.lang-b{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.55);border-radius:4px;font:inherit;font-size:13px;font-weight:700;letter-spacing:.04em;padding:9px 12px 9px 12px;cursor:pointer;white-space:nowrap;display:flex;align-items:center;gap:6px}
+.lang-b::after{content:"";width:6px;height:6px;border-right:2px solid #fff;border-bottom:2px solid #fff;transform:rotate(45deg) translateY(-2px)}
+.lang-b:hover{background:rgba(255,255,255,.12)}
+.lang-m{position:fixed;z-index:200;display:none;list-style:none;margin:0;padding:6px 0;background:#fff;border:1px solid #cfdcec;border-radius:8px;box-shadow:0 8px 24px rgba(20,48,116,.22);min-width:130px}
+.lang-m.open{display:block}
+.lang-m a{display:block;padding:10px 18px;color:#143074;text-decoration:none;font-size:15px}
+.lang-m a:hover{background:#eaf2fb}
+.lang-m a[aria-current]{font-weight:700;color:#0657a5}
+@media(max-width:640px){
+  .top-in{gap:8px}
+  .top .tel{padding:9px 10px;font-size:12.5px}
+  .lang-b{padding:9px 9px;font-size:12px}
+}
+/* 번역 문구가 길어져도 줄바꿈되도록 */
+html:not([lang=ko]) .step p span,html:not([lang=ko]) .ex-sum .pl,html:not([lang=ko]) .chip2{white-space:normal}
+html:not([lang=ko]) body{word-break:normal;overflow-wrap:anywhere}
+html:not([lang=ko]) .subtabs button{white-space:normal;line-height:1.25;letter-spacing:0}

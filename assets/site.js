@@ -30,7 +30,8 @@
   var head=''+
   '<header class="top"><div class="top-in"><a href="'+(root||'./')+'"><img class="logo" src="'+root+'img/logo_w.png" alt="한양대학교병원"></a>'+
   '<div class="dept"><div class="d-t"><b>영상의학과 초음파실</b><small>ULTRASOUND ROOM</small></div></div>'+
-  '<a class="tel" href="tel:0222908114">'+ic('i-phone')+'02-2290-8114</a></div>'+
+  '<a class="tel" href="tel:0222908114">'+ic('i-phone')+'02-2290-8114</a>'+
+  '<div class="lang"><button type="button" class="lang-b" aria-haspopup="true" aria-label="Language">KO</button></div></div>'+
   '<nav class="tabs" aria-label="메뉴">'+nav+'</nav></header>';
   var title=b.getAttribute('data-title');
   if(title){
@@ -60,6 +61,7 @@
     '<details class="ddm"><summary>관련사이트</summary><div>'+links(rela.slice(0,6))+'</div></details></div></div></div></footer>';
   b.insertAdjacentHTML('afterbegin',sprite+head);
   b.insertAdjacentHTML('beforeend',foot);
+  b.insertAdjacentHTML('beforeend','<ul class="lang-m" role="menu"><li><a href="#" data-l="ko">한국어</a></li><li><a href="#" data-l="en">English</a></li><li><a href="#" data-l="ru">Русский</a></li><li><a href="#" data-l="mn">Монгол</a></li></ul>');
   window.icon=ic;
   /* 우측 빠른 메뉴 (PC 1320px 이상) + 맨 위로 버튼 */
   var up='<svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M6 15l6-6 6 6" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>';
