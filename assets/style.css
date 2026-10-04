@@ -1033,3 +1033,23 @@ body .ft details.ddm summary{border-radius:0}
 .ex-sum.wide3 span.k{flex:none}
 .ex-sum.wide3 b{flex:1;min-width:0}
 .ex-sum.wide3{align-items:start}
+
+/* ===== v61: FAQ 카테고리 탭 + 접힘, 오시는 길 정보 줄 좌측 정렬, 모바일 카드 이미지 비율 ===== */
+.fp{display:none;max-width:860px}
+.fp.on{display:block}
+.fp details{margin-bottom:12px}
+body[data-page=faq] .subtabs{margin:20px 0 24px;max-width:860px}
+@media(max-width:640px){body[data-page=faq] .subtabs{grid-template-columns:repeat(3,1fr)}}
+/* 오시는 길: 주소·전화·진료시간 좌측 정렬, 간격 축소 */
+@media(min-width:901px){
+  .addr{display:flex;flex-wrap:wrap;justify-content:flex-start;gap:12px 56px;padding:22px 30px}
+}
+/* 모바일 검사 종류 카드: 사진 원본 비율(16:10) 유지, 세로형 */
+@media(max-width:640px){
+  .tcard{flex-direction:column;min-height:0}
+  .tcard .timg{flex:none;width:100%;min-height:0;aspect-ratio:16/10}
+  .tcard .tb{padding:14px 16px 16px;min-height:150px;justify-content:flex-start}
+  .tcard .tb b{font-size:17px}
+  .tcard .tb p{font-size:13px;margin-bottom:10px}
+  .tcard .tb .chip2{font-size:12px;padding:4px 11px;white-space:normal;margin-top:auto}
+}

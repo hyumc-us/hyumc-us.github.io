@@ -8,17 +8,45 @@
 </head>
 <body data-title="자주 묻는 질문" data-page="faq" data-root="../">
 <main class="wrap">
-  <div class="ptitle"><h2>자주 묻는 질문</h2><p>검사 전 가장 많이 문의하시는 내용입니다.</p></div>
-  <div class="faqg">
-      <details open><summary><span>검사 시간은 얼마나 걸리나요?</span></summary><div class="a">보통 10~15분 정도 소요됩니다. 대기시간은 혼잡도에 따라 달라질 수 있습니다.</div></details>
-      <details open><summary><span>예약 없이 검사받을 수 있나요?</span></summary><div class="a">초음파 검사는 진료 후 처방된 경우 예약이 필요합니다. 예약 변경은 대표전화로 문의해주세요.</div></details>
-      <details open><summary><span>아침에 약을 먹어도 되나요?</span></summary><div class="a">대부분의 약은 소량의 물과 함께 복용 가능합니다. 당뇨약·인슐린은 금식 시 저혈당 위험이 있으므로 처방 의료진과 상담하세요.</div></details>
-      <details open><summary><span>결과는 언제 알 수 있나요?</span></summary><div class="a">검사 결과는 처방 진료과 외래 진료 시 의료진에게 들으실 수 있습니다. 판독 완료 시기는 검사에 따라 다릅니다.</div></details>
-      <details open><summary><span>검사가 아픈가요?</span></summary><div class="a">통증은 거의 없습니다. 탐촉자를 대고 약간 누르는 느낌이 있을 수 있습니다. 검사에 사용하는 젤은 차갑지 않습니다.</div></details>
-      <details open><summary><span>보호자가 함께 들어갈 수 있나요?</span></summary><div class="a">원칙적으로 환자 본인만 검사실에 입실합니다. 소아·거동이 불편한 환자는 보호자 동반이 가능합니다.</div></details>
-      <details open class="wide"><summary><span>세포흡인검사·조직검사 전에 주의할 점이 있나요?</span></summary><div class="a">검사 전 외래에서 동의서를 작성한 후 방문해 주세요. 항혈전제(아스피린·항응고제 등)를 중단하지 않고 오셨다면 검사 당일 꼭 미리 말씀해 주세요. 출혈이 잘 멎지 않은 적이 있거나 알레르기, 임신 가능성이 있을 때도 알려주세요. 검사 후 시술 부위의 출혈·부기·심한 통증이 있으면 병원으로 문의해 주세요.</div></details>
+  <div class="ptitle"><h2>자주 묻는 질문</h2><p>검사 전 가장 많이 문의하시는 내용입니다. 질문을 누르면 답변이 열립니다.</p></div>
+
+  <div class="subtabs c3" id="ftabs" role="tablist">
+    <button class="on" data-s="f-prep">검사 준비</button>
+    <button data-s="f-exam">검사 과정</button>
+    <button data-s="f-visit">예약 · 결과</button>
+  </div>
+
+  <!-- 검사 준비 -->
+  <div class="fp on" id="f-prep">
+    <details><summary><span>아침에 약을 먹어도 되나요?</span></summary><div class="a">대부분의 약은 소량의 물과 함께 복용 가능합니다. 당뇨약·인슐린은 금식 시 저혈당 위험이 있으므로 처방 의료진과 상담하세요.</div></details>
+    <details><summary><span>다른 병원에서 찍은 초음파 영상을 가져가야 하나요?</span></summary><div class="a">꼭 가져오셔야 하는 것은 아니지만, 이전에 같은 부위를 검사한 영상이나 소견서가 있다면 지참해 주세요. 지금 영상과 비교해 변화를 확인하는 데 도움이 됩니다. 이전 자료가 없어도 검사는 가능합니다.</div></details>
+    <details><summary><span>세포흡인검사·조직검사 전에 주의할 점이 있나요?</span></summary><div class="a">검사 전 외래에서 동의서를 작성한 후 방문해 주세요. 항혈전제(아스피린·항응고제 등)를 중단하지 않고 오셨다면 검사 당일 꼭 미리 말씀해 주세요. 출혈이 잘 멎지 않은 적이 있거나 알레르기, 임신 가능성이 있을 때도 알려주세요. 검사 후 시술 부위의 출혈·부기·심한 통증이 있으면 병원으로 문의해 주세요.</div></details>
+  </div>
+
+  <!-- 검사 과정 -->
+  <div class="fp" id="f-exam">
+    <details><summary><span>검사 시간은 얼마나 걸리나요?</span></summary><div class="a">보통 10~15분 정도 소요됩니다. 대기시간은 혼잡도에 따라 달라질 수 있습니다.</div></details>
+    <details><summary><span>초음파 검사는 아픈가요?</span></summary><div class="a">통증은 거의 없습니다. 탐촉자를 피부에 대고 움직이면서 약간 누르는 느낌이 있을 수 있고, 방광을 채우고 하는 검사는 배를 누를 때 다소 불편할 수 있습니다. 참기 어려울 정도로 불편하면 검사 중에 바로 말씀해 주세요.</div></details>
+    <details><summary><span>검사할 때 젤은 왜 바르나요?</span></summary><div class="a">탐촉자와 피부 사이에 공기가 있으면 초음파가 몸속으로 잘 전달되지 않아 영상이 흐려집니다. 젤은 그 공기층을 없애 선명한 영상을 얻기 위해 바르며, 인체에 해롭지 않습니다. 검사가 끝나면 휴지로 닦으시면 됩니다.</div></details>
+    <details><summary><span>보호자가 함께 들어갈 수 있나요?</span></summary><div class="a">원칙적으로 환자 본인만 검사실에 입실합니다. 소아·거동이 불편한 환자는 보호자 동반이 가능합니다.</div></details>
+  </div>
+
+  <!-- 예약 · 결과 -->
+  <div class="fp" id="f-visit">
+    <details><summary><span>예약 없이 검사받을 수 있나요?</span></summary><div class="a">초음파 검사는 진료 후 처방된 경우 예약이 필요합니다. 예약 변경은 대표전화로 문의해주세요.</div></details>
+    <details><summary><span>예약시간보다 일찍 가면 바로 검사할 수 있나요?</span></summary><div class="a">먼저 접수는 가능하지만, 앞서 예약된 환자분들의 순서대로 검사가 진행되므로 바로 검사받기 어려울 수 있습니다. 예약시간 10~15분 전에 도착해 접수한 뒤, 초음파실 앞 전광판을 확인하고 호명을 기다려 주세요.</div></details>
+    <details><summary><span>결과는 언제 알 수 있나요?</span></summary><div class="a">검사 결과는 처방 진료과 외래 진료 시 의료진에게 들으실 수 있습니다. 판독 완료 시기는 검사에 따라 다릅니다.</div></details>
   </div>
 </main>
 <script src="../assets/site.js"></script>
+<script>
+(function(){
+  var tabs=document.querySelectorAll('#ftabs button');
+  tabs.forEach(function(b){b.addEventListener('click',function(){
+    tabs.forEach(function(x){x.classList.toggle('on',x===b)});
+    document.querySelectorAll('.fp').forEach(function(p){p.classList.toggle('on',p.id===b.dataset.s)});
+  })});
+})();
+</script>
 </body>
 </html>
