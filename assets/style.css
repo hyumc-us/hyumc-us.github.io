@@ -1067,3 +1067,10 @@ body[data-page=faq] .fp details summary::before{background:#143074;color:#fff}
 body[data-page=faq] .fp details summary::after{color:#0657a5}
 body[data-page=faq] .fp details[open] summary{background:#dbe9f8;border-bottom:1px solid #cddff2}
 body[data-page=faq] .fp details summary:hover{background:#e0ecf9}
+
+/* ===== v63: 모바일에서 (상복부)/(하복부) 준비 문구를 줄 단위로 분리 ===== */
+.ex-sum .pl{white-space:nowrap}
+@media(max-width:640px){
+  .ex-sum .pl{display:block}
+  .ex-sum .sep{display:none}
+}
