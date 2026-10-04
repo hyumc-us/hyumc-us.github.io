@@ -1021,3 +1021,6 @@ body .ft details.ddm summary{border-radius:0}
 
 /* ===== v56: ※ 주석 문단 정렬 (둘째 줄부터 ※ 뒤 글자에 맞춤) ===== */
 .note-ref{padding-left:1.1em;text-indent:-1.1em}
+
+/* ===== v58: 카드 '자세히 보기'가 준비 칩과 겹치지 않도록 제목 줄 오른쪽으로 ===== */
+.tcard .tb::after{top:22px;bottom:auto;right:18px}
