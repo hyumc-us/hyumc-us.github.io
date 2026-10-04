@@ -23,7 +23,7 @@
   '<symbol id="i-baby" viewBox="0 0 48 48"><circle cx="5.5" cy="27" r="3.5"/><circle cx="42.5" cy="27" r="3.5"/><circle cx="24" cy="26" r="19"/><circle class="a" cx="17" cy="26" r="2.6"/><circle class="a" cx="31" cy="26" r="2.6"/><path class="s" d="M18.5 33.5c3.2 3 7.8 3 11 0"/><path class="s" d="M19 7.5c1.2-3.2 5-4.4 7-2.2 1.2 1.3.8 3.2-.6 4"/></symbol>'+
   '</defs></svg>';
   function ic(id){return '<svg class="ic" aria-hidden="true"><use href="#'+id+'"/></svg>';}
-  var items=[['home','홈','','i-home'],['exam','검사안내','exam/','i-exam'],['faq','자주 묻는 질문','faq/','i-faq'],['location','위치','location/','i-floor'],['directions','오시는 길','directions/','i-pin']];
+  var items=[['home','홈','','i-home'],['exam','검사안내','exam/','i-exam'],['faq','자주 묻는 질문','faq/','i-faq'],['location','초음파실 위치','location/','i-floor'],['directions','오시는 길','directions/','i-pin']];
   var nav=items.map(function(i){
     return '<a href="'+(root+i[2]||'./')+'"'+(i[0]===cur?' aria-current="page"':'')+'>'+ic(i[3])+i[1]+'</a>';
   }).join('');

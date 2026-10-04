@@ -1027,3 +1027,9 @@ body .ft details.ddm summary{border-radius:0}
 
 /* ===== v59: 모바일 검사 종류 카드 높이 통일(설명이 길어진 카드 기준) ===== */
 @media(max-width:640px){ .tcard{min-height:150px} .tcard .timg{min-height:150px} }
+
+/* ===== v60: 상·하복부 요약 줄 - 라벨과 내용을 같은 줄에, 윗줄 정렬 ===== */
+.ex-sum.wide3>div{flex-wrap:nowrap;align-items:flex-start}
+.ex-sum.wide3 span.k{flex:none}
+.ex-sum.wide3 b{flex:1;min-width:0}
+.ex-sum.wide3{align-items:start}
