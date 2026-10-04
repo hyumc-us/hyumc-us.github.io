@@ -1024,3 +1024,6 @@ body .ft details.ddm summary{border-radius:0}
 
 /* ===== v58: 카드 '자세히 보기'가 준비 칩과 겹치지 않도록 제목 줄 오른쪽으로 ===== */
 .tcard .tb::after{top:22px;bottom:auto;right:18px}
+
+/* ===== v59: 모바일 검사 종류 카드 높이 통일(설명이 길어진 카드 기준) ===== */
+@media(max-width:640px){ .tcard{min-height:150px} .tcard .timg{min-height:150px} }
