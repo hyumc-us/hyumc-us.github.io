@@ -8,54 +8,32 @@
 </head>
 <body data-title="초음파실 위치" data-page="location" data-root="../">
 <main class="wrap">
-  <div class="ptitle"><h2>초음파실 위치</h2><p>영상의학과 <b>초음파검사실</b>은 <b>본관 3층</b>과 <b>본관 2층</b> 두 곳에 있습니다.</p></div>
+  <div class="ptitle"><h2>초음파실 위치</h2><p>영상의학과 <b>초음파검사실</b>은 <b>본관 3층</b>과 <b>본관 2층</b> 두 곳에 있으며, 접수는 <b>본관 3층 영상의학과</b>에서 합니다.</p></div>
 
   <div class="rooms"><div class="room"><span class="rb">본관 3층</span><div><b>영상의학과 초음파실</b><small>평일 08:30~17:30</small></div></div><div class="room"><span class="rb">본관 2층</span><div><b>영상의학과 초음파실</b><small>오전 08:30~11:30 · 유방·갑상선 검사</small></div></div></div>
 
-  <h3 class="sec-h">본관 3층 초음파실 가는 길</h3>
-  <p class="loc-lead">이용하시는 입구를 선택하면 이동 방법이 표시됩니다.</p>
-  <div id="routeBtns" class="routes loc-routes"></div>
-
-  <div class="card route-wrap">
-    <h3 id="rt">이동 방법</h3>
-    <ol class="route" id="steps"></ol>
-    <p class="note-ref" style="font-size:13px;color:var(--sub);margin-top:10px">※ 현장 안내 표지를 함께 확인해주세요.</p>
+  <h3 class="sec-h">본관 3층 영상의학과 접수에서 가는 길</h3>
+  <div class="grid g2 loc-cards">
+    <div class="card">
+      <h3 data-i="i-pin">3층 영상의학과 초음파실</h3>
+      <ol class="route">
+        <li><span>본관 3층 <b>영상의학과 접수</b>에서 접수합니다.</span></li>
+        <li><span>영상의학과 안쪽의 <b>초음파실</b>로 이동합니다.</span></li>
+        <li><span>초음파실 앞 전광판을 확인하고 호명을 기다립니다.</span></li>
+      </ol>
+    </div>
+    <div class="card">
+      <h3 data-i="i-pin">2층 영상의학과 초음파실</h3>
+      <p class="room-tag">유방·갑상선 검사 · 오전 08:30~11:30</p>
+      <ol class="route">
+        <li><span>본관 3층 <b>영상의학과 접수</b>에서 접수합니다.</span></li>
+        <li><span>본관 엘리베이터를 타고 <b>2층</b>에서 내립니다.</span></li>
+        <li><span><b>영상의학과 초음파실</b> 앞 전광판을 확인하고 호명을 기다립니다.</span></li>
+      </ol>
+    </div>
   </div>
-
-  <h3 class="sec-h">본관 2층 초음파실 가는 길</h3>
-  <div class="card route-wrap">
-    <h3 data-i="i-pin">본관 2층 영상의학과 초음파실</h3>
-    <p class="room2">본관 엘리베이터를 타고 <b>2층</b>에서 내려 <b>영상의학과 초음파실</b>로 이동합니다. 유방·갑상선 검사를 시행하며, 오전 08:30~11:30에 운영합니다.</p>
-  </div>
+  <p class="note-ref" style="font-size:13px;color:var(--sub);margin-top:14px">※ 현장 안내 표지를 함께 확인해주세요.</p>
 </main>
 <script src="../assets/site.js"></script><script src="../assets/i18n-data.js"></script><script src="../assets/i18n.js"></script>
-<script>
-(function(){
-  var R=[
-    {n:'서관·상단 에스컬레이터',
-     t:['서관 6층 방향 또는 본관 에스컬레이터로 <b>3층</b>에 올라옵니다.','에스컬레이터에서 나와 아래쪽(CT·X-ray 방향) 통로로 이동합니다.','오른쪽 <b>영상의학과</b> 복도로 진입해 끝까지 직진합니다.','복도 안쪽 <b>초음파실</b> 접수 후 대기합니다.']},
-    {n:'본관 엘리베이터',
-     t:['본관 엘리베이터를 타고 <b>3층</b>에서 내립니다.','내리면 바로 오른쪽이 <b>영상의학과</b> 구역입니다.','복도를 따라 안쪽으로 직진합니다.','<b>초음파실</b> 접수 후 대기합니다.']},
-    {n:'응급센터·동관 통로',
-     t:['응급센터 · 동관 연결통로로 3층에 들어옵니다.','통로를 따라 위쪽으로 직진합니다.','<b>영상의학과</b> 복도에서 오른쪽으로 꺾어 이동합니다.','<b>초음파실</b> 접수 후 대기합니다.']},
-    {n:'서관 3층 연결',
-     t:['서관 3층에서 본관 방향 연결통로로 이동합니다.','통로 끝에서 바로 <b>영상의학과</b> 구역에 도착합니다.','<b>초음파실</b> 접수 후 대기합니다.']}
-  ];
-  var btns=document.getElementById('routeBtns'),st=document.getElementById('steps');
-  function draw(i){
-    var r=R[i];
-    st.innerHTML=r.t.map(function(x){return '<li><span>'+x+'</span></li>'}).join('');
-    document.getElementById('rt').textContent=['①','②','③','④'][i]+' '+r.n+'에서 오는 길';
-    [].forEach.call(btns.children,function(b,j){b.classList.toggle('on',j===i)});
-    if(window.i18nApply){window.i18nApply(document.querySelector('.route-wrap'));}
-  }
-  R.forEach(function(r,i){
-    var b=document.createElement('button');b.innerHTML='<i>'+(i+1)+'</i>'+r.n;
-    b.onclick=function(){draw(i)};btns.appendChild(b);
-  });
-  draw(0);
-  if(window.i18nApply){window.i18nApply(btns);}
-})();
-</script>
 </body>
 </html>

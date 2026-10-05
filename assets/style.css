@@ -1161,3 +1161,7 @@ html:not([lang=ko]) .subtabs button{white-space:normal;line-height:1.25;letter-s
 main .sec-h{margin-top:26px}
 .room2{line-height:1.8;margin-top:6px}
 .addr{gap:12px 36px}
+
+/* ===== v71: 3층 영상의학과 접수 기준 안내 카드 ===== */
+.loc-cards{align-items:start;margin-top:8px}
+.room-tag{display:inline-block;background:#e7f1fa;color:#0657a5;font-weight:700;font-size:13.5px;border-radius:999px;padding:4px 12px;margin:2px 0 10px}
