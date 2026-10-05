@@ -1146,3 +1146,10 @@ html:not([lang=ko]) .subtabs button{white-space:normal;line-height:1.25;letter-s
   html:not([lang=ko]) .infocard b,html:not([lang=ko]) .infocard div:first-child b{white-space:normal}
 }
 @media(max-width:900px){html:not([lang=ko]) .infocard span.k{width:auto;max-width:150px;white-space:normal}}
+
+/* ===== v69: 초음파실 2곳(본관 3층 · 2층) ===== */
+.rooms{display:flex;flex-wrap:wrap;gap:12px;margin:6px 0 18px}
+.room{display:flex;align-items:center;gap:12px;background:#f3f8fd;border:1px solid #cfdfef;border-radius:8px;padding:14px 20px}
+.room .rb{background:#143074;color:#fff;font-size:13px;font-weight:700;border-radius:3px;padding:3px 10px;white-space:nowrap}
+.room b{color:#143074;font-size:17px}
+@media(max-width:640px){.rooms{flex-direction:column;gap:8px}.room{padding:12px 14px}.room b{font-size:16px}}
