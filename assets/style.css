@@ -1153,3 +1153,11 @@ html:not([lang=ko]) .subtabs button{white-space:normal;line-height:1.25;letter-s
 .room .rb{background:#143074;color:#fff;font-size:13px;font-weight:700;border-radius:3px;padding:3px 10px;white-space:nowrap}
 .room b{color:#143074;font-size:17px}
 @media(max-width:640px){.rooms{flex-direction:column;gap:8px}.room{padding:12px 14px}.room b{font-size:16px}}
+
+/* ===== v70: 초음파실 2곳 상세 ===== */
+.room div{display:flex;flex-direction:column;gap:2px}
+.room small{font-size:13px;color:#4c5b73}
+.loc-lead{margin:-4px 0 10px;color:var(--sub);font-size:15px}
+main .sec-h{margin-top:26px}
+.room2{line-height:1.8;margin-top:6px}
+.addr{gap:12px 36px}
