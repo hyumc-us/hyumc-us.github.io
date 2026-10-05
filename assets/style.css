@@ -1108,3 +1108,17 @@ body{font-family:"Noto Sans KR","Noto Sans","Malgun Gothic",sans-serif}
 html:not([lang=ko]) .step p span,html:not([lang=ko]) .ex-sum .pl,html:not([lang=ko]) .chip2{white-space:normal}
 html:not([lang=ko]) body{word-break:normal;overflow-wrap:anywhere}
 html:not([lang=ko]) .subtabs button{white-space:normal;line-height:1.25;letter-spacing:0}
+
+/* ===== v67: 검사 진행 순서 4단계 ===== */
+@media(min-width:901px){
+  .steps.s3.n4{grid-template-columns:repeat(4,1fr);gap:14px}
+  .steps.s3.n4 .step{padding:22px 16px 22px 18px}
+  .steps.s3.n4 .step{padding-right:72px}
+  .steps.s3.n4 .step .si{width:46px;height:46px;font-size:25px;right:14px;top:20px}
+  .steps.s3.n4 .step p span{white-space:normal}
+}
+@media(min-width:901px){
+  .steps.s3.n4 .step{padding-right:16px}
+  .steps.s3.n4 .step b{padding-right:54px;min-height:46px}
+  .steps.s3.n4 .step p{font-size:15px;line-height:1.6}
+}
