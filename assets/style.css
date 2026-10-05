@@ -1122,3 +1122,27 @@ html:not([lang=ko]) .subtabs button{white-space:normal;line-height:1.25;letter-s
   .steps.s3.n4 .step b{padding-right:54px;min-height:46px}
   .steps.s3.n4 .step p{font-size:15px;line-height:1.6}
 }
+
+/* ===== v68: 홈 안내 카드 4칸(예약/변경 전화 추가) ===== */
+@media(min-width:901px){
+  .infocard{grid-template-columns:repeat(4,1fr);font-size:16px}
+  .infocard div{padding:22px 20px;gap:10px}
+}
+.fp .a a{color:#0657a5;font-weight:700;text-decoration:none}
+@media(min-width:901px){
+  .infocard{font-size:15px;grid-template-columns:1.05fr 1fr 1fr 1.2fr}
+  .infocard div{padding:20px 14px 20px 18px;gap:8px}
+  .infocard span.k{width:auto;white-space:nowrap}
+  .infocard b{white-space:nowrap}
+  .infocard div:first-child b{white-space:normal}
+}
+/* 번역 언어: 안내 카드를 2×2로 */
+@media(min-width:901px){
+  html:not([lang=ko]) .infocard{grid-template-columns:1fr 1fr}
+  html:not([lang=ko]) .infocard div{border-bottom:1px solid var(--line)}
+  html:not([lang=ko]) .infocard div:nth-child(2n){border-right:0}
+  html:not([lang=ko]) .infocard div:nth-child(n+3){border-bottom:0}
+  html:not([lang=ko]) .infocard span.k{white-space:normal;flex:none;max-width:150px}
+  html:not([lang=ko]) .infocard b,html:not([lang=ko]) .infocard div:first-child b{white-space:normal}
+}
+@media(max-width:900px){html:not([lang=ko]) .infocard span.k{width:auto;max-width:150px;white-space:normal}}
